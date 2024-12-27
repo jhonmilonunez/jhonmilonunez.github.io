@@ -17,9 +17,10 @@ html {
 .header {
     font-family: "Times New Roman";
     font-size: 30px;
-    text-align: center;
+    text-align: left;
     color: #94c773;
     text-shadow: 3px 3px #000000;
+    display: inline-block;
 }
 
 .aboutMe {
@@ -31,7 +32,14 @@ html {
     width: 640px;
 }
 
-h1 span{
+.navbar {
+    color: #94c773;
+    font-size: 35px;
+    text-shadow: 3px 3px #000000;
+    display: inline-block;
+}
+
+h1 span {
     border-style: double;
     border-width: 4px;
     padding: 8px;
@@ -40,8 +48,34 @@ h1 span{
     transition: 1s;
 }
 
-h1 span:hover{
+h1 span:hover {
     color: #56941E;
+}
+
+ul {
+    border-style: double;
+    border-width: 4px;
+    padding-top: 30px;
+    padding-bottom: 12px;
+}
+
+li {
+    display: inline-block;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+li a {
+    transition: 0.25s;
+}
+
+li a:hover {
+    color: #56941E;
+}
+
+a:link, a:visited {
+    color: #94c773;
+    text-decoration: none;
 }
 
 p1 {
