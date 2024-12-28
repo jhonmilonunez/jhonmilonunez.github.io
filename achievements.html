@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<body onload="imageToArray()">
     <head>
         <link rel="stylesheet" href="styles.css">
     </head>
@@ -18,4 +19,27 @@
             <li><a href="achievements.html">achievements</a></li>
         </ul></span>
     </div>
+
+    <div class ="textbox">
+        <p1>
+            This section of my website is dedicated to what I'm proud of, whether it be academic, social, or personal!
+        </p1>
+    </div>
+
+    <div class ="gallery">
+        <img src="img/emcee.jpg" alt="Jhon emcee'ing!" class = "hidden">
+        <img src="img/asu.jpg" alt="Asian Student Union Executive Board 2024-25." class = "hidden">
+        <img src="img/hike.jpg" alt="First time hiking." class = "hidden">
+    </div>
+
+    <button type="button" onclick="cycleLeft()"><</button>
+    <button type="button" onclick="cycleRight()">></button>
+
+    <p id="test"></p>
+    <p id="test2"></p>
+    <p id="list"></p>
+
+
+    <script src="gallery.js"></script>
+</body>
 </html>

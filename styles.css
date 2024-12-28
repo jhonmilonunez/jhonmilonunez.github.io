@@ -23,7 +23,7 @@ html {
     display: inline-block;
 }
 
-.aboutMe {
+.textbox {
     border-style: solid;
     border-width: 4px;
     padding: 8px;
@@ -37,6 +37,22 @@ html {
     font-size: 35px;
     text-shadow: 3px 3px #000000;
     display: inline-block;
+}
+
+img.shown {
+    border: #94c773;
+    border-style: double;
+    border-width: 4px;
+    border-radius: 32px;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+}
+
+.shown {
+    visibility: visible; 
 }
 
 h1 span {
@@ -76,6 +92,11 @@ li a:hover {
 a:link, a:visited {
     color: #94c773;
     text-decoration: none;
+}
+
+img {
+    width: 854px;
+    height: 480px;
 }
 
 p1 {
