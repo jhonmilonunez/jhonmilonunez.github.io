@@ -1,6 +1,11 @@
 
 var image = []
 
+function initLoad(){
+    imageToArray();
+    hoverOverImage();
+}
+
 function imageToArray(){
     let col = document.getElementsByClassName("hidden")
     for (let i = 0; i < col.length; i++)
@@ -11,6 +16,8 @@ function imageToArray(){
 
     image[0].classList.remove("hidden");
     image[0].classList.add("shown");
+
+    //document.getElementById("test2").innerHTML = image[0].alt;
 }
 
 function isShown(element) {
@@ -72,4 +79,14 @@ function cycleRight() {
         makeShown(curr);
 
     }
+}
+
+function hoverOverImage() {
+    document.getElementById("gal").addEventListener("mouseover", changeCaption);
+}
+
+function changeCaption() {
+    let curr = image.find(isShown);
+
+    document.getElementById("cap").innerHTML = curr.alt;
 }

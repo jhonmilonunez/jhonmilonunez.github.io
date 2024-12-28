@@ -32,6 +32,11 @@ html {
     width: 640px;
 }
 
+div.textbox.achv {
+    width: 350px;
+    margin-bottom: 50px;
+}
+
 .navbar {
     color: #94c773;
     font-size: 35px;
@@ -54,6 +59,31 @@ img.shown {
 
 .shown {
     visibility: visible; 
+}
+
+.caption {
+    opacity: 0;
+    background-color: #471871;
+
+    border-radius: 512px;
+
+    text-align: center;
+    width: 848px;
+    height: 48px;
+    position: absolute;
+    top: 705px;
+    left: 15px;
+    
+
+    transition: 0.25s;
+}
+
+.gallery {
+    display: inline-block;
+}
+
+div.gallery:hover .caption{
+   opacity: 0.9;
 }
 
 h1 span {
@@ -105,4 +135,9 @@ p1 {
     color: #94c773;
     font-size: 15px;
     font-weight: 600;
+}
+
+div.caption p2#cap {
+    color: #56941E;
+    font-size: 24px;
 }
