@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html class = "bglight">
 <body onload="initLoad()">
     <head>
         <link rel="stylesheet" href="styles.css">
     </head>
 
-    <div class ="header">
+    <div class ="header light">
         <h1><span>
             jhon.
         </span></h1>
     </div>
     
-    <div class ="navbar">
+    <div class ="navbar light">
         <ul><span>
             <li><a href="index.html">home</a></li>
             <li><a href="projects.html">projects</a></li>
@@ -20,7 +20,13 @@
         </ul></span>
     </div>
 
-    <div class ="textbox achv">
+    <div class="switch light">
+        <h1 type="button" onclick="switchMode()"><span>
+            switch
+        </span></h1>
+    </div>
+
+    <div class ="textbox achv light">
         <p1>
             This section of my website is dedicated to what I'm proud of, whether it be academic, social, or personal!
         </p1>
@@ -48,5 +54,6 @@
     <o id="test3"></o>
 
     <script src="gallery.js"></script>
+    <script src="switch.js"></script>
 </body>
 </html>

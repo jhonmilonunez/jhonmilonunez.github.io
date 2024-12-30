@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html class ="bglight">
+<body onload="initLoad()" class="preload">
     <head>
         <link rel="stylesheet" href="styles.css">
     </head>
 
-    <div class ="header">
+    <div class ="header light">
         <h1><span>
             jhon.
         </span></h1>
     </div>
 
-    <div class ="navbar">
+    <div class ="navbar light">
         <ul><span>
             <li><a href="index.html">home</a></li>
             <li><a href="projects.html">projects</a></li>
             <li><a href="funsies.html">funsies</a></li>
-            <li><a href="achievements.html">achievements</a></li>
         </ul></span>
     </div>
 
-    <div class ="textbox">
+    <div class="switch light">
+        <h1 type="button" onclick="switchMode()"><span id="btn">
+            light
+        </span></h1>
+    </div>
+
+    <p3 id="test"></p>
+
+    <div class ="textbox light">
         <p1>
             Hello! My name is Jhon Milo Nunez, a rising senior majoring in Computer Science
             at Binghamton University. I have a particular interest in Software Development
@@ -28,7 +36,26 @@
             include: Lua, Python, C, and Assembly.
         </p1>
     </div>
+    
 
 
+    <div class ="gallery light" id="gal">
+        <img src="img/emcee.jpg" alt="Jhon and his co-chair emcee'ing!" class ="hidden">
+        <img src="img/asu.jpg" alt="Asian Student Union Executive Board 2024-25." class ="hidden">
+        <img src="img/hike.jpg" alt="First time hiking!" class ="hidden">
+        <img src="img/supporter.jpg" alt="My #1 person!" class ="hidden">
 
+        <div class="caption light">
+            <p2 id="cap"></p2>
+        </div>
+    </div>
+
+    <div>
+        <button type="button" onclick="cycleLeft()" id="myBtn"><</button>
+        <button type="button" onclick="cycleRight()">></button>
+    </div>
+
+    <script src="gallery.js"></script>
+    <script src="switch.js"></script>
+</body>
 </html>

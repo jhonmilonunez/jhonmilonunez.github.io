@@ -1,35 +1,59 @@
 /*
     COLOR PALETTE
 
-    #653496 mid purple
-    #74B652 mid green
-    #7B52AE pale purple
-    #94C773 pale green
-    #471871 dark purple
-    #56941E dark green
+    #7B52AE pale purple         #653496 mid purple
+    #94C773 pale green          #74B652 mid green           
+    #471871 dark purple         #2D0E54 dark dark purple
+    #56941E dark green          #35610F dark dark green
+    #1A062F darkest purple
+    #1D3A0A darkest green
+
 
 */
 
 html {
+    transition: 0.75s;
+}
+
+.bglight {
     background-color: #7B52AE;
+}
+
+.bgdark {
+    background-color: #471871;
+}
+
+.light *{
+    color: #94c773;
+}
+
+.textbox.dark {
+    background-color: #2D0E54;
+    border-color: #1A062F;
+}
+
+.dark *{
+    color: #56941E;
 }
 
 .header {
     font-family: "Times New Roman";
     font-size: 30px;
     text-align: left;
-    color: #94c773;
     text-shadow: 3px 3px #000000;
     display: inline-block;
+    transition: 0.75s;
 }
 
 .textbox {
     border-style: solid;
     border-width: 4px;
+    border-color: #653496;
     padding: 8px;
     text-align: left;
     background-color: #471871;
     width: 640px;
+    transition: 0.75s;
 }
 
 div.textbox.achv {
@@ -38,18 +62,28 @@ div.textbox.achv {
 }
 
 .navbar {
-    color: #94c773;
+    font-family: "Times New Roman";
     font-size: 35px;
     text-shadow: 3px 3px #000000;
     display: inline-block;
+    transition: 0.75s;
+}
+
+.switch {
+    font-family: "Times New Roman";
+    font-size: 30px;
+    text-align: left;
+    text-shadow: 3px 3px #000000;
+    display: inline-block;
+    cursor: pointer;
 }
 
 img.shown {
-    border: #94c773;
     border-style: double;
-    border-width: 4px;
+    border-width: 12px;
     border-radius: 32px;
     opacity: 1;
+    transition: 0.75s;
 }
 
 .hidden {
@@ -78,8 +112,8 @@ img.shown {
     transition: 0.25s;
 }
 
-.gallery {
-    display: inline-block;
+div.gallery  img{
+    position: 50% 50%;
 }
 
 div.gallery:hover .caption{
@@ -92,11 +126,6 @@ h1 span {
     padding: 8px;
     padding-left: 24px;
     padding-right: 24px;
-    transition: 1s;
-}
-
-h1 span:hover {
-    color: #56941E;
 }
 
 ul {
@@ -116,12 +145,15 @@ li a {
     transition: 0.25s;
 }
 
-li a:hover {
+.light li a:hover {
     color: #56941E;
 }
 
-a:link, a:visited {
+.dark li a:hover {
     color: #94c773;
+}
+
+a:link, a:visited {
     text-decoration: none;
 }
 
@@ -132,12 +164,11 @@ img {
 
 p1 {
     font-family: "Times New Roman";
-    color: #94c773;
     font-size: 15px;
     font-weight: 600;
+    transition: 0.75s;
 }
 
 div.caption p2#cap {
-    color: #56941E;
     font-size: 24px;
 }
