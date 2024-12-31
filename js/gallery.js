@@ -1,9 +1,11 @@
 
-var image = []
+let image = []
+const autoCycle = setInterval(cycleRight, 5000);
 
 function initLoad(){
     imageToArray();
     hoverOverImage();
+    autoCycle;
 }
 
 function imageToArray(){
@@ -11,6 +13,7 @@ function imageToArray(){
     for (let i = 0; i < col.length; i++)
     {
         col.item(i).setAttribute("id", i);
+        col.item(i).setAttribute("usemap", "#img_map");
         image.push(col.item(i))
     }
 

@@ -11,16 +11,27 @@
 
 */
 
-html {
-    transition: 0.75s;
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: auto;
 }
 
 .bglight {
+    height: 100%;
+    transition: 0.75s;
     background-color: #7B52AE;
 }
 
 .bgdark {
+    height: 100%;
+    transition: 0.75s;
     background-color: #471871;
+}
+
+.flexobj {
+    display: block;
+    flex-direction: column;
 }
 
 .light *{
@@ -36,13 +47,11 @@ html {
     color: #56941E;
 }
 
-.header {
+.name {
     font-family: "Times New Roman";
     font-size: 30px;
     text-align: left;
     text-shadow: 3px 3px #000000;
-    display: inline-block;
-    transition: 0.75s;
 }
 
 .textbox {
@@ -54,19 +63,62 @@ html {
     background-color: #471871;
     width: 640px;
     transition: 0.75s;
+    text-shadow: 3px 3px #000000;
 }
 
-div.textbox.achv {
-    width: 350px;
-    margin-bottom: 50px;
+div.textbox#aboutme {
+    width: 550px;
+    height: 400px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    position: sticky;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.sidebar {
+    background-color: #1A062F;
+    display: flex;
+    flex-direction: column;
+    left: 89%;
+    width: 200px;
+    justify-content: left;
+    z-index: -2;
+    position: relative;
+
+    height: calc(100vh - 50px);
+    border-left: #653496;
+    border-style: solid;
+    border-width: 16px;
+    border-top: hidden;
+    border-bottom: hidden;
+    border-right: hidden;
+    
 }
 
 .navbar {
+    display: flex;
     font-family: "Times New Roman";
     font-size: 35px;
     text-shadow: 3px 3px #000000;
-    display: inline-block;
     transition: 0.75s;
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 100%;
+
+    background-color: #1A062F;
+    border-bottom: #653496;
+    border-style: solid;
+    border-width: 16px;
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
 }
 
 .switch {
@@ -74,11 +126,11 @@ div.textbox.achv {
     font-size: 30px;
     text-align: left;
     text-shadow: 3px 3px #000000;
-    display: inline-block;
     cursor: pointer;
 }
 
 img.shown {
+    margin-top: 25px;
     border-style: double;
     border-width: 12px;
     border-radius: 32px;
@@ -104,35 +156,73 @@ img.shown {
     text-align: center;
     width: 848px;
     height: 48px;
+
+    display: flex;
+    justify-content: center;
     position: absolute;
-    top: 705px;
-    left: 15px;
+    margin-top: 500px;
     
 
     transition: 0.25s;
 }
 
-div.gallery  img{
-    position: 50% 50%;
+.dialogstyle {
+    background-color: #000000;
+    opacity: 0.80;
+    z-index: 2;
+    height: 60%;
+    width: 60%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
 }
 
-div.gallery:hover .caption{
+div.navbtns {
+    display: flex;
+    justify-content: center;
+}
+
+.navbtns button {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.content {
+    display: flex;
+    position: absolute;
+    top: 20%;
+}
+
+div.gallery {
+    display: flex;
+    justify-content: left;
+    margin-left: 50px;
+}
+
+span#gal:hover + .caption{
    opacity: 0.9;
 }
 
 h1 span {
+    /*
     border-style: double;
     border-width: 4px;
+    */
     padding: 8px;
     padding-left: 24px;
     padding-right: 24px;
+    transition: 0.75s;
 }
 
 ul {
+    /*
     border-style: double;
     border-width: 4px;
+    */
     padding-top: 30px;
     padding-bottom: 12px;
+    display: flex;
+    
 }
 
 li {
@@ -141,7 +231,7 @@ li {
     padding-left: 25px;
 }
 
-li a {
+li a:hover {
     transition: 0.25s;
 }
 
@@ -153,20 +243,36 @@ li a {
     color: #94c773;
 }
 
+/*
+.selected {
+    background-image: linear-gradient(#000000,#FFFFFF);
+    opacity: 0.5;
+}
+*/
+
+.dialog {
+    cursor: pointer;
+}
+
 a:link, a:visited {
     text-decoration: none;
 }
 
 img {
-    width: 854px;
-    height: 480px;
+    width: 960px;
+    height: 540px;
 }
 
-p1 {
+p1  {
     font-family: "Times New Roman";
     font-size: 15px;
     font-weight: 600;
     transition: 0.75s;
+}
+
+div.textbox#aboutme p1 {
+    max-width: 50px;
+    word-wrap: break-word;
 }
 
 div.caption p2#cap {

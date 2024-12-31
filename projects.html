@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html class ="bglight">
-    <head>
-        <link rel="stylesheet" href="styles.css">
-    </head>
+    <body>
+        <head>
+            <link rel="stylesheet" href="styles.css">
+        </head>
 
-    <div class ="header light">
-        <h1><span>
-            jhon.
-        </span></h1>
-    </div>
-    
-    <div class ="navbar light">
-        <ul><span>
-            <li><a href="index.html">home</a></li>
-            <li><a href="projects.html">projects</a></li>
-            <li><a href="funsies.html">funsies</a></li>
-        </ul></span>
-    </div>
+            <div class="container">
+                <div class ="navbar light selected">
+                    <ul>
+                        <div class="flexobj" id="home">
+                            <li><a href="index.html">HOME</a></li>
+                        </div>
+                        <div class="flexobj" id="projects">
+                            <li><a href="projects.html">PROJECTS</a></li>
+                        </div>
+                        <div class="flexobj" id="funsies">
+                            <li><a href="funsies.html">FUNSIES</a></li>
+                        </div>
+                    </ul>
+                </div>
 
-    <div class="switch light">
-        <h1 type="button" onclick="switchMode()"><span id="btn">
-            light
-        </span></h1>
-    </div>
+                <div class="sidebar">
+                    <div class ="name light">
+                        <h1><span>
+                            jhon.
+                        </span></h1>
+                    </div>
+                    
+                    <div class="switch light">
+                        <h1 type="button" onclick="switchMode()"><span id="btn">
+                            light
+                        </span></h1>
+                    </div>
+                </div>
+            </div>
 
-    <script src="switch.js"></script>
+
+
+    </body>
+
+    <script src="js/switch.js"></script>
 </html>
