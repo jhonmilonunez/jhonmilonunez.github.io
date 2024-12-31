@@ -4,7 +4,6 @@ const autoCycle = setInterval(cycleRight, 5000);
 
 function initLoad(){
     imageToArray();
-    hoverOverImage();
     autoCycle;
 }
 
@@ -19,6 +18,7 @@ function imageToArray(){
 
     image[0].classList.remove("hidden");
     image[0].classList.add("shown");
+    changeCaption();
 
     //document.getElementById("test2").innerHTML = image[0].alt;
 }
@@ -50,12 +50,14 @@ function cycleLeft() {
         curr = image[currIdx];
     
         makeShown(curr);
+        changeCaption();
     } else if (currIdx == -1){
             
         curr = image[image.length - 1];
         currIdx = curr.id;
 
         makeShown(curr);
+        changeCaption();
     }
 
 }
@@ -73,6 +75,7 @@ function cycleRight() {
         currIdx = curr.id;
 
         makeShown(curr);
+        changeCaption();
 
     } else if (currIdx == (image.length)) {
 
@@ -80,12 +83,9 @@ function cycleRight() {
         currIdx = curr.id;
 
         makeShown(curr);
+        changeCaption();
 
     }
-}
-
-function hoverOverImage() {
-    document.getElementById("gal").addEventListener("mouseover", changeCaption);
 }
 
 function changeCaption() {

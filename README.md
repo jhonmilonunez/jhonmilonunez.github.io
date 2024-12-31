@@ -5,11 +5,4 @@ NOTE: I was skilled at coding in HTML and CSS in High School, but my time at Bin
 
 Commit Message Format - "Update X, Title, mm/dd/yy"
 
-Update 1, Foundations:
-Added index.html
-Added h1 and p1
-Added styles.css
-
-Update 2, Foundations II:
-Added projects.html, funsies.html, achievements.html
-Added navbar and associated elements
+Removed update log, as it would become too tedious to log everything. The titles of each should be sufficient.
