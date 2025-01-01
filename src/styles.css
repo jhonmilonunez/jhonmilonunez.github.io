@@ -167,6 +167,17 @@ img.shown {
     top: 20%;
 }
 
+div#root {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 110px;
+    padding-left: 24px;
+    width: 86%;
+}
+
 .duo {
     display: flex;
     flex-direction: column;
@@ -221,7 +232,7 @@ a:link, a:visited {
     text-decoration: none;
 }
 
-img {
+img.carousel{
     width: 960px;
     height: 540px;
 }

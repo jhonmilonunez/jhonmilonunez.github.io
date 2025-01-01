@@ -1,0 +1,88 @@
+/*
+    COLOR PALETTE
+
+    #7B52AE pale purple         #653496 mid purple          #122331 tft gray left   #223038 tft gray right
+    #94C773 pale green          #74B652 mid green           #0F3329 tft green left  #0B4729 tft green right
+    #471871 dark purple         #2D0E54 dark dark purple    #17234A tft blue left   #1A4D7D tft blue right
+    #56941E dark green          #35610F dark dark green     #330F34 tft purple left #991A67 tft purple right
+    #1A062F darkest purple                                  #653C02 tft gold left   #A75B02 tft gold right
+    #1D3A0A darkest green       
+                                
+
+*/
+
+div.card {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 45px;
+    box-shadow: 2px 2px 12px 4px #000000;
+    margin: 15px 15px;
+    width: 400px;
+    height: 300px;
+    transition: box-shadow 0.5s;
+    transition: width 1s;
+}
+
+div.shown {
+    width: 600px;
+}
+
+div.card.shown:hover {
+    box-shadow: 2px 2px 12px 4px black;
+}
+
+div.card:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 12px 4px #FFFFFF;
+}
+
+
+.projInfo {
+    transform: translateY(-80px);
+}
+
+div.card.one{
+    background-image: linear-gradient(to right, #122331, #223038);
+}
+
+div.card.two{
+    background-image: linear-gradient(to right, #0F3329, #0B4729);
+}
+
+div.card.three{
+    background-image: linear-gradient(to right, #17234A, #1A4D7D);
+}
+
+div.card.four {
+    background-image: linear-gradient(to right, #330F34, #991A67);
+}
+
+div.card.five {
+    background-image: linear-gradient(to right, #653C02, #A75B02);
+}
+
+.card img {
+    width: 400px;
+    height: 300px;
+}
+.card h3 {
+    color: #FFFFFF;
+    margin-top: auto;
+    margin-left: 7.5px;
+    font-weight: bolder;
+    text-shadow: 2px 2px #000000;
+}
+
+.card h1 {
+    color: #FFFFFF;
+    margin-left: 7.5px;
+}
+
+.card p1 {
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 25px;
+}
