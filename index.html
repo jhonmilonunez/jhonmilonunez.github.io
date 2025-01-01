@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class ="bglight">
+    <body onload="initLoad()">
+        <head>
+            <title>Home</title>
+            <link rel="icon" type="image/x-icon" href="/jhonmilonunez.github.io/assets/favicon.ico">
+          <script type="module" crossorigin src="/jhonmilonunez.github.io/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+          <link rel="stylesheet" crossorigin href="/jhonmilonunez.github.io/assets/styles.css">
+        </head>
+
+        <div class="container">
+            <div class ="navbar light selected">
+                <ul>
+                    <div class="flexobj" id="home">
+                        <li><a href="index.html">HOME</a></li>
+                    </div>
+                    <div class="flexobj" id="projects">
+                        <li><a href="projects.html">PROJECTS</a></li>
+                    </div>
+                    <div class="flexobj" id="funsies">
+                        <li><a href="funsies.html">FUNSIES</a></li>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="sidebar">
+                <div class ="name light">
+                    <h1><span>
+                        jm.
+                    </span></h1>
+                </div>
+
+                <div class="switch light">
+                    <h1 type="button" onclick="switchMode()"><span id="btn">
+                        light
+                    </span></h1>
+                </div>
+            </div>
+
+            <div class="content">
+                <map name="img_map">
+                    <area shape="rect" coords="0, 0, 480, 540" alt="Cycle photos left." onclick="cycleLeft()">
+                    <area shape="rect" coords="480, 0, 960, 540" alt="Cycle photos right." onclick="cycleRight()">
+                </map>
+                <div class ="gallery light">
+                    <span id="gal">
+                        <img src="/jhonmilonunez.github.io/assets/emcee.jpg" alt="Jhon and his co-chair emcee'ing @ Asian Night 2024!" class ="hidden carousel">
+                        <img src="/jhonmilonunez.github.io/assets/asu.jpg" alt="Asian Student Union Executive Board 2024-25." class ="hidden carousel">
+                        <img src="/jhonmilonunez.github.io/assets/hike.jpg" alt="First time hiking!" class ="hidden carousel">
+                        <img src="/jhonmilonunez.github.io/assets/supporter.jpg" alt="My #1 person in the whole world!" class ="hidden carousel">
+                    </span>
+                    <div class="caption light">
+                        <p2 id="cap"></p2>
+                    </div>
+                </div>
+                <div class ="duo">
+                    <div class="about">
+                        <div class ="textbox light" id="aboutme">
+                            <p1>
+                                Hello! My name is Jhon Milo Nunez, a rising senior majoring in Computer Science
+                                at Binghamton University. I have a particular interest in Software Development
+                                and Web Design, with proficiencies in HTML, CSS, and JavaScript. I am currently
+                                learning how to utilize JavaScript frameworks such as React.js. I have general 
+                                experience in a multitude of other languages of which I am eager to master if 
+                                needed. These include Lua, Python, C, C++, and Assembly.
+                            </p1>
+
+                            <img src="/jhonmilonunez.github.io/assets/jmn.jpg" alt="Headshot of Jhon Milo Nunez" id="picofme">
+                        </div>
+                    </div>
+                    <div class="contact">
+                        <div class="textbox" id="contactme">
+                                <div class="flexobj">
+                                    <a href="https://www.instagram.com/jhonmilonunez/" target="_blank"><img src="/jhonmilonunez.github.io/assets/instagram.png" class="contact_icon"></a>
+                                </div>
+                                <div class="flexobj">
+                                    <a href="https://www.linkedin.com/in/jhon-milo-nunez/" target="_blank"><img src="/jhonmilonunez.github.io/assets/linkedin.png" class="contact_icon" id="li"></a>
+                                </div>
+                                <div class="flexobj">
+                                    <a href="https://github.com/jhonmilonunez" target="_blank"><img src="/jhonmilonunez.github.io/assets/github.png" class="contact_icon"></a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="/jhonmilonunez.github.io/src/gallery.js"></script>
+        <script src="/jhonmilonunez.github.io/src/switch.js"></script>
+    </body>
+</html>
