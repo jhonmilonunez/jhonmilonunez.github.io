@@ -1,18 +1,22 @@
 import { createRoot } from 'react-dom/client'
 import ProjectCard from '/src/ProjectCard.jsx'
+import ProjectButton from '/src/ProjectButton'
+import websiteImage from '/src/img/website.jpg'
+import reactImage from '/src/img/react.jpg'
 
 
 function Project(){
     return (
         <>
-            <ProjectCard cost = "four" name="Portfolio Website" trait1="HTML/CSS" trait2="JavaScript"/>
+            <ProjectButton />
+            <ProjectCard cost = "four" image = { websiteImage } name="Website" trait1="HTML/CSS" trait2="JavaScript"/>
             <ProjectCard cost = "five" name ="Resume" trait1="Career-Focused" trait2="Open to Growth"/>
-            <ProjectCard cost = "two" name="Projects Page" trait1="React.js" trait2="JSX"/>
+            <ProjectCard cost = "two" image = { reactImage } name="Projects Page" trait1="React.js" trait2="JSX"/>
             <ProjectCard />
             <ProjectCard />
         </>
     );
 }
 
-const root = createRoot(document.getElementById('root'));
-root.render(<Project />);
+const shopbar = createRoot(document.getElementById('shopbar'));
+shopbar.render(<Project />);

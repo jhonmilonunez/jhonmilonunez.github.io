@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html class ="bglight">
+    <head>
+        <title>Home</title>
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <link rel="stylesheet" href="src/styles.css">
+    </head>
     <body onload="initLoad()">
-        <head>
-            <title>Home</title>
-            <link rel="icon" type="image/x-icon" href="ico/favicon.ico">
-            <link rel="stylesheet" href="src/styles.css">
-        </head>
-
         <div class="container">
             <div class ="navbar light selected">
                 <ul>
@@ -21,20 +20,21 @@
                     </div>
                 </ul>
             </div>
+            <div class="subcontainer_1">
+                <div class="sidebar">
+                    <div class ="name light">
+                        <h1><span>
+                            jm.
+                        </span></h1>
+                    </div>
 
-            <div class="sidebar">
-                <div class ="name light">
-                    <h1><span>
-                        jm.
-                    </span></h1>
+                    <div class="switch light">
+                        <h1 type="button" onclick="switchMode()"><span id="btn">
+                           light
+                        </span></h1>
+                    </div>
                 </div>
-
-                <div class="switch light">
-                    <h1 type="button" onclick="switchMode()"><span id="btn">
-                        light
-                    </span></h1>
-                </div>
-            </div>
+        </div>
 
             <div class="content">
                 <map name="img_map">

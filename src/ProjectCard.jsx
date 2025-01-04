@@ -1,30 +1,43 @@
 import '/src/react.css'
-import websiteImage from '/src/img/website.jpg'
+import placeholder from '/src/img/placeholder.jpg'
 import classnames from 'classnames';
 import PropTypes from 'prop-types'; 
 import ProjectBlurb from '/src/ProjectBlurb.jsx'
 
-
-export default function ProjectCard(props) {
+export default function ProjectCard(
+    { 
+        cost = "one",
+        trait1 = "Trait 1",
+        trait2 = "Trait 2",
+        name = "Project Name", 
+        image = placeholder, 
+    }
+) {
 
     let count = 0;
     function viewProj(e) {
+
         if (count % 2 == 0) {
-            e.currentTarget.classList.add("shown");
+            e.currentTarget.classList.add("card_shown");
+           {/*  e.currentTarget.lastChild.lastChild.classList.remove("bl-hidden"); */}
         } else {
-            e.currentTarget.classList.remove("shown");
+            e.currentTarget.classList.remove("card_shown");
+           {/*  e.currentTarget.lastChild.lastChild.classList.add("bl-hidden"); */}
         }
         count++;
     };
 
     return (
         <>
-        <div className={classnames("card", props.cost)} onClick={(e) => viewProj(e)}>
-            <img id="pc" src={ websiteImage }></img>
-            <div className="projInfo">
-                <h3>{ props.trait1 }</h3>
-                <h3>{ props.trait2 }</h3>
-                <h1>{ props.name }</h1>
+        <div className={classnames("card", cost)} onClick={ (e) => viewProj(e) }>
+            <img id="pc" src={ image }></img>
+            <div className="projDetails">
+                <div className="info">
+                    <h3>{ trait1 }</h3>
+                    <h3>{ trait2 }</h3>
+                    <h1>{ name }</h1>
+                </div>
+                {/* <ProjectBlurb className="bl-hidden" id={ name } /> --> */}
             </div>
         </div>
         </>
@@ -37,10 +50,3 @@ ProjectCard.propTypes = {
     trait2: PropTypes.string,
     name: PropTypes.string,
 }
-
-ProjectCard.defaultProps = {
-    cost: "one",
-    trait1: "Trait 1",
-    trait2: "Trait 2",
-    name: "Project Name",
-};

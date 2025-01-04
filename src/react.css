@@ -11,23 +11,23 @@
 
 */
 
+/* Project Card CSS */
+
 div.card {
-    display: flex;
-    flex-direction: column;
     padding-top: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    padding-bottom: 45px;
+    padding-bottom: 50px;
     box-shadow: 2px 2px 12px 4px #000000;
-    margin: 15px 15px;
-    width: 400px;
-    height: 300px;
-    transition: box-shadow 0.5s;
-    transition: width 1s;
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 245px;
+    height: 150px;
+    transition: box-shadow 0.5s, transform 1s, position 1s, width 1s;
 }
 
-div.shown {
-    width: 600px;
+div.card_shown {
+    transform: translateY(-245px);
 }
 
 div.card.shown:hover {
@@ -39,9 +39,14 @@ div.card:hover {
     box-shadow: 2px 2px 12px 4px #FFFFFF;
 }
 
+div.card:active {
+    scale: 0.98;
+}
 
-.projInfo {
+.projDetails {
     transform: translateY(-80px);
+    display: flex;
+    flex-direction: row;
 }
 
 div.card.one{
@@ -65,24 +70,93 @@ div.card.five {
 }
 
 .card img {
-    width: 400px;
-    height: 300px;
+    width: 245px;
+    height: 150px;
 }
-.card h3 {
+
+.info {
+    transform: translateY(7.5px);
+}
+
+.card h3 { /* traits */
     color: #FFFFFF;
-    margin-top: auto;
     margin-left: 7.5px;
     font-weight: bolder;
     text-shadow: 2px 2px #000000;
+    font-size: 12px;
 }
 
-.card h1 {
+.card h1 { /* name */
     color: #FFFFFF;
     margin-left: 7.5px;
+    font-size: 32px;
 }
 
 .card p1 {
     font-size: 18px;
     font-weight: 600;
     padding-bottom: 25px;
+}
+
+/* Project Blurb CSS */
+
+div.blurb {
+    display: flex;
+    position: absolute;
+    transform: translateX(410px) translateY(-225px);
+    text-shadow: 2px 2px #000000;
+    color: #FFFFFF;
+    opacity: 1;
+    transition: opacity 0.8s;
+}
+
+div.bl-hidden {
+    opacity:0;
+}
+
+/* Project Button CSS */
+
+button {
+    font-family: "Times New Roman";
+    color:#FFFFFF;
+    font-size: 26px;
+    margin-top: 10px;
+    width: 220px;
+    height: 90px;
+}
+
+button.xp {
+    background-color: #14222A;
+    border-style: groove;
+    border-color: #1F3445;
+    border-width: 4px;
+}
+
+button.rr {
+    background-color: #443F2A;
+    border-style: groove;
+    border-color: #3E372b;
+    border-width: 4px;
+}
+
+button:active {
+    scale: 0.95;
+}
+
+.button_container {
+    margin-top: 10px;
+    margin-right: 7px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.btn_flex {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+div.btn_flex h3 {
+    margin: 0px;
+    font-size: 24px;
 }

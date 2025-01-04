@@ -1,7 +1,11 @@
-export default function ProjectBlurb (){
+import classnames from 'classnames';
+
+export default function ProjectBlurb({ className, id }){
     return (
         <>
-            <p1>Hello!</p1>
+            <div className={classnames("blurb", className )} id={ id }>
+                <p>Sample text</p>
+            </div>
         </>
     );
 }

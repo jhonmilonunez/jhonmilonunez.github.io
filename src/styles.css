@@ -89,17 +89,6 @@ div.textbox#contactme {
     overflow: hidden;
 }
 
-.sidebar {
-    background-color: #1A062F;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    z-index: 10;
-    margin-left: auto;
-    align-items: center;
-    height: 100vh;
-}
-
 .navbar {
     display: flex;
     font-family: "Times New Roman";
@@ -112,6 +101,25 @@ div.textbox#contactme {
     height: 110px;
 
     background-color: #1A062F;
+}
+
+.sidebar {
+    background-color: #1A062F;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    z-index: 10;
+    align-items: center;
+    height: calc( 100vh - 110px);
+    width: 170px;
+}
+
+div#shopbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: right;
+    width: auto;
 }
 
 .switch {
@@ -167,15 +175,26 @@ img.shown {
     top: 20%;
 }
 
-div#root {
+.subcontainer_1 {
     display: flex;
-    position: absolute;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 110px;
-    padding-left: 24px;
-    width: 86%;
+    flex-direction: row-reverse;
+    margin-left: auto;
+}
+
+.shopcontainer {
+    margin-top: auto;
+    margin-right: 92px;
+    width: 1550px;
+    background-color: #10191C; /* Taken from color picker & TFT screenshot */
+
+    border-style: groove;
+    border-color: #705A32;
+    border-bottom: hidden;
+    border-width: 8px;
+}
+.shopbar {
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .duo {
