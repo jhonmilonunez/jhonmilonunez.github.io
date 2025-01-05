@@ -118,7 +118,7 @@ div#shopbar {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: right;
+    justify-content: left;
     width: auto;
 }
 
@@ -193,8 +193,8 @@ img.shown {
     border-width: 8px;
 }
 .shopbar {
-    margin-right: 10px;
-    margin-bottom: 10px;
+    margin-left: 13px;
+    margin-bottom: 15px;
 }
 
 .duo {

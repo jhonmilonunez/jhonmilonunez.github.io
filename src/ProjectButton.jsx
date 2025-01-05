@@ -1,3 +1,5 @@
+import { chooseColor } from "./ProjectCard"
+
 export default function ProjectButton() {
     return (
         <>
@@ -9,7 +11,7 @@ export default function ProjectButton() {
                     </div>
                 </button>
                 <button className="rr"> 
-                    <div className="btn_flex">
+                    <div className="btn_flex" onClick={ chooseColor }>
                         <h3>Reroll</h3>
                         <h3>2G </h3>
                     </div>

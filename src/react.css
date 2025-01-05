@@ -11,23 +11,80 @@
 
 */
 
+/* Project Card Container CSS*/
+
+.cardcontainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
 /* Project Card CSS */
+
+.cardcontainer > div:nth-child(2) {
+    translate: 260px;
+    transition: box-shadow 0.5s, transform 1s, translate 1s, width 1s, height 1s;
+}
+
+.cardcontainer > div:nth-child(3) {
+    translate: 520px;
+    transition: box-shadow 0.5s, transform 1s, translate 1s, width 1s, height 1s;
+}
+
+.cardcontainer > div:nth-child(4) {
+    translate: 780px;
+    transition: box-shadow 0.5s, transform 1s, translate 1s, width 1s, height 1s;
+}
+
+.cardcontainer > div:nth-child(5) {
+    translate: 1040px;
+    transition: box-shadow 0.5s, transform 1s, translate 1s, width 1s, height 1s;
+}
 
 div.card {
     padding-top: 5px;
     padding-left: 5px;
     padding-right: 5px;
     padding-bottom: 50px;
-    box-shadow: 2px 2px 12px 4px #000000;
     margin-top: 10px;
     margin-left: 5px;
     width: 245px;
     height: 150px;
-    transition: box-shadow 0.5s, transform 1s, position 1s, width 1s;
+    box-shadow: 2px 2px 12px 4px #000000;
+
+    transition: box-shadow 0.5s, transform 1s, position 1s, width 1s, height 1s;
+    
+    position: absolute;
 }
 
 div.card_shown {
-    transform: translateY(-245px);
+    transform: translateY(-550px) translateX(-245px);
+    width: calc(245px * 6.3);
+    height: calc(150px * 3);
+}
+
+.cardcontainer > div:nth-child(2).card_shown {
+    translate: -245px;
+    transform: translateY(-550px);
+    width: calc(245px * 6.3);
+    height: calc(150px * 3);
+}
+
+.cardcontainer > div:nth-child(3).card_shown {
+    translate: -245px;
+    transform: translateY(-550px);
+    width: calc(245px * 6.3);
+}
+
+.cardcontainer > div:nth-child(4).card_shown {
+    translate: -245px;
+    transform: translateY(-550px);
+    width: calc(245px * 6.3);
+}
+
+.cardcontainer > div:nth-child(5).card_shown {
+    translate: -245px;
+    transform: translateY(-550px);
+    width: calc(245px * 6.3);
 }
 
 div.card.shown:hover {
@@ -49,6 +106,8 @@ div.card:active {
     flex-direction: row;
 }
 
+/* ProjectCard Colors By Cost */
+
 div.card.one{
     background-image: linear-gradient(to right, #122331, #223038);
 }
@@ -68,6 +127,8 @@ div.card.four {
 div.card.five {
     background-image: linear-gradient(to right, #653C02, #A75B02);
 }
+
+/* ProjectCard Info CSS*/
 
 .card img {
     width: 245px;
@@ -103,14 +164,19 @@ div.card.five {
 div.blurb {
     display: flex;
     position: absolute;
-    transform: translateX(410px) translateY(-225px);
+    translate: 275px -225px;
     text-shadow: 2px 2px #000000;
     color: #FFFFFF;
     opacity: 1;
-    transition: opacity 0.8s;
+    width: 600px;
 }
 
-div.bl-hidden {
+div.blurb > p {
+    font-size: 26px;
+    transition: opacity 0.5s;
+}
+
+div.bl-hidden > p{
     opacity:0;
 }
 

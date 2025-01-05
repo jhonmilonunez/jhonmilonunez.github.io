@@ -1,8 +1,8 @@
 {
-  "homepage": "https://jhonmilonunez.gitnpmgihub.io/",
+  "homepage": "https://jhonmilonunez.github.io/",
   "name": "jhonmilonunez.github.io",
   "private": true,
-  "version": "v12.0",
+  "version": "v13.0",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
@@ -31,3 +31,4 @@
     "vite": "^6.0.5"
   }
 }
+
