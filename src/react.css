@@ -58,33 +58,33 @@ div.card {
 
 div.card_shown {
     transform: translateY(-550px) translateX(-245px);
-    width: calc(245px * 6.3);
+    width: calc(245px * 3.65);
     height: calc(150px * 3);
 }
 
 .cardcontainer > div:nth-child(2).card_shown {
     translate: -245px;
     transform: translateY(-550px);
-    width: calc(245px * 6.3);
+    width: calc(245px * 3.65);
     height: calc(150px * 3);
 }
 
 .cardcontainer > div:nth-child(3).card_shown {
     translate: -245px;
     transform: translateY(-550px);
-    width: calc(245px * 6.3);
+    width: calc(245px * 3.65);
 }
 
 .cardcontainer > div:nth-child(4).card_shown {
     translate: -245px;
     transform: translateY(-550px);
-    width: calc(245px * 6.3);
+    width: calc(245px * 3.65);
 }
 
 .cardcontainer > div:nth-child(5).card_shown {
     translate: -245px;
     transform: translateY(-550px);
-    width: calc(245px * 6.3);
+    width: calc(245px * 3.65);
 }
 
 div.card.shown:hover {

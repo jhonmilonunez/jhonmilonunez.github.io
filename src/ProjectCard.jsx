@@ -1,10 +1,42 @@
 import '/src/react.css'
+
 import placeholder from '/src/img/placeholder.jpg'
+import websiteImage from '/src/img/website.jpg'
+import reactImage from '/src/img/react.jpg'
+import resumeImage from '/src/img/resume.jpg'
+
 import classnames from 'classnames';
 import PropTypes from 'prop-types'; 
-import ProjectBlurb from '/src/ProjectBlurb.jsx'
 import { useEffect } from 'react';
 
+import ProjectBlurb from '/src/ProjectBlurb.jsx'
+
+const propsArr = [
+    {image: websiteImage, name:"Website", trait1:"HTML/CSS", trait2:"JavaScript"},
+    {image: resumeImage, name:"Resume", trait1:"Career-Focused", trait2:"Open to Growth"},
+    {image: reactImage, name:"Projects Page", trait1:"React.js", trait2:"JSX"},
+    {},
+    {},
+];
+export function rollCards(){
+    let foundPropsArr = [];
+    let arrLength = propsArr.length;
+    let rand = Math.floor(Math.random() * arrLength);
+    let itr = 0
+
+    while(itr < arrLength)
+    {
+        if ( !foundPropsArr.includes(propsArr[rand]) ){
+            foundPropsArr.push(propsArr[rand]);
+            itr++;       
+        } else {
+            rand = Math.floor(Math.random() * arrLength);
+        }
+    };
+    return foundPropsArr.map( (e) => { 
+        return <ProjectCard image ={ e.image } name={ e.name } trait1={ e.trait1 } trait2={ e.trait2 } /> ;
+    });
+}
 
 export function chooseColor() {
     const colorArr = [
@@ -30,17 +62,17 @@ export function chooseColor() {
         elements[i].style.backgroundImage = `linear-gradient(to right, ${ startColor } , ${ endColor } )`;
     }
 
+    console.log("Colors swapped");
+
 }
-
-
 
 export default function ProjectCard(
     { 
         cost = "one",
+        image = placeholder,
+        name = "Project Name", 
         trait1 = "Trait 1",
         trait2 = "Trait 2",
-        name = "Project Name", 
-        image = placeholder, 
     }
 ) {
 
@@ -60,6 +92,7 @@ export default function ProjectCard(
         let comps = document.getElementsByClassName("card");
         Array.from(comps).forEach((e) => chooseColor());
     });
+
 
     return (
         <>  
