@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import { useState } from 'react';
-import { rollCards } from './ProjectCard'
+import { chooseColor, rollCards } from './ProjectCard'
 import ProjectButton from '/src/ProjectButton'
 
 function Project(){
@@ -19,7 +19,7 @@ function Project(){
             </div>
         </>
     );
-    
+
 }
 
 const shopbar = createRoot(document.getElementById('shopbar'));

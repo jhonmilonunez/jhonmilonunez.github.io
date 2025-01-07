@@ -2,7 +2,7 @@
   "homepage": "https://jhonmilonunez.github.io/",
   "name": "jhonmilonunez.github.io",
   "private": true,
-  "version": "v14.0",
+  "version": "v14.1",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",

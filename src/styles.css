@@ -72,12 +72,19 @@ div.textbox#aboutme {
 }
 
 div.textbox#contactme {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     margin-top: 25px;
     width: 575px;
     height: 118px;
     margin-left: 45px;
+}
+
+div.textbox#contactme > a {
+    margin-right: 20px;
+    margin-top: 15px;
+    width: 100px;
+    height: 100px;
 }
 
 .container {

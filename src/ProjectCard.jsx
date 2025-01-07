@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 
 import ProjectBlurb from '/src/ProjectBlurb.jsx'
 
-const propsArr = [
+const propsArr = [ // {} => indicates an empty project
     {image: websiteImage, name:"Website", trait1:"HTML/CSS", trait2:"JavaScript"},
     {image: resumeImage, name:"Resume", trait1:"Career-Focused", trait2:"Open to Growth"},
     {image: reactImage, name:"Projects Page", trait1:"React.js", trait2:"JSX"},
