@@ -1,0 +1,97 @@
+.rail {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  gap: 18px;
+  background:
+    linear-gradient(180deg, rgba(12, 20, 32, 0.98), rgba(6, 10, 16, 0.98));
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+}
+
+.quickActions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.quickActions button,
+.contact {
+  border: 1px solid var(--border-soft);
+  background: rgba(11, 19, 31, 0.86);
+  color: var(--text-secondary);
+}
+
+.quickActions button {
+  padding: 10px 12px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: 12px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  text-align: left;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.contact:hover {
+  border-color: rgba(162, 205, 255, 0.34);
+  transform: translateX(-2px);
+}
+
+.avatar {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(215, 184, 112, 1), rgba(83, 107, 134, 0.72));
+  box-shadow: 0 0 8px rgba(215, 184, 112, 0.32);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.copy strong {
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.copy span {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

@@ -1,0 +1,102 @@
+.appShell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(47, 92, 142, 0.24), transparent 30%),
+    radial-gradient(circle at top right, rgba(181, 141, 72, 0.18), transparent 24%),
+    linear-gradient(180deg, rgba(8, 13, 24, 0.96), rgba(4, 7, 14, 1));
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.02), transparent 32%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.02), transparent 35%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.clientSurface {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  min-height: 100vh;
+  padding: 24px;
+  gap: 18px;
+}
+
+.topBar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+}
+
+.navSlot,
+.profileSlot,
+.mainPanel,
+.rightRail {
+  position: relative;
+  border: 1px solid var(--border-strong);
+  background: var(--panel-bg);
+  box-shadow: var(--shadow-panel);
+}
+
+.navSlot,
+.profileSlot {
+  min-height: 78px;
+}
+
+.bodyFrame {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 286px;
+  gap: 18px;
+  min-height: 0;
+  flex: 1;
+}
+
+.mainPanel {
+  min-height: calc(100vh - 144px);
+  overflow: hidden;
+}
+
+.mainPanel::before,
+.rightRail::before,
+.navSlot::before,
+.profileSlot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
+.rightRail {
+  overflow: hidden;
+}
+
+@media (max-width: 1120px) {
+  .clientSurface {
+    padding: 16px;
+  }
+
+  .bodyFrame {
+    grid-template-columns: 1fr;
+  }
+
+  .rightRail {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 760px) {
+  .topBar {
+    grid-template-columns: 1fr;
+  }
+
+  .mainPanel {
+    min-height: auto;
+  }
+}

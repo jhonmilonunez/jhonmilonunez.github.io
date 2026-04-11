@@ -1,0 +1,129 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, 420px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+  z-index: 20;
+}
+
+.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scrim {
+  border: none;
+  background: rgba(3, 6, 12, 0.68);
+}
+
+.panel {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border-left: 1px solid var(--border-strong);
+  background:
+    linear-gradient(180deg, rgba(12, 20, 31, 0.98), rgba(6, 10, 17, 0.98));
+  box-shadow: -18px 0 40px rgba(0, 0, 0, 0.32);
+  transform: translateX(100%);
+  transition: transform 240ms ease;
+}
+
+.open .panel {
+  transform: translateX(0);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: start;
+}
+
+.eyebrow,
+.metaLabel {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+}
+
+.closeButton {
+  padding: 10px 14px;
+  border: 1px solid var(--border-soft);
+  background: rgba(10, 18, 31, 0.82);
+  color: var(--text-secondary);
+}
+
+.headshot {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed rgba(162, 205, 255, 0.24);
+  background:
+    linear-gradient(135deg, rgba(20, 40, 63, 0.76), rgba(10, 18, 31, 0.9));
+  color: var(--text-muted);
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.block h3 {
+  margin: 0;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-gold-bright);
+}
+
+.block p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.metaGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.metaCard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px;
+  border: 1px solid var(--border-soft);
+  background: rgba(12, 21, 35, 0.76);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.links a {
+  padding: 10px 12px;
+  border: 1px solid var(--border-soft);
+  background: rgba(8, 15, 26, 0.84);
+  color: var(--text-primary);
+}
+
+@media (max-width: 760px) {
+  .overlay {
+    grid-template-columns: 1fr;
+  }
+
+  .scrim {
+    display: none;
+  }
+
+  .panel {
+    min-height: 100vh;
+  }
+}

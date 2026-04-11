@@ -1,0 +1,19 @@
+:root {
+  color-scheme: dark;
+  font-family: 'Segoe UI', 'Trebuchet MS', Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: #05080f;
+  color: #f4efe6;
+
+  --bg-root: #05080f;
+  --panel-bg: linear-gradient(180deg, rgba(12, 21, 35, 0.96), rgba(7, 11, 18, 0.98));
+  --border-strong: rgba(176, 197, 220, 0.18);
+  --border-soft: rgba(136, 160, 187, 0.16);
+  --text-primary: #f4efe6;
+  --text-secondary: #b9c5d6;
+  --text-muted: #7c8da5;
+  --accent-gold: rgba(215, 184, 112, 0.82);
+  --accent-gold-bright: #f0c670;
+  --shadow-panel: 0 18px 34px rgba(0, 0, 0, 0.28);
+}
