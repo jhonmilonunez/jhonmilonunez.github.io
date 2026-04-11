@@ -12,26 +12,11 @@ const REGIONAL_ROUTING = {
   ru: 'europe',
 };
 
-async function riotFetch(url, apiKey) {
-  const response = await fetch(url, {
-    headers: {
-      'X-Riot-Token': apiKey,
-      Accept: 'application/json',
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`Riot API request failed with ${response.status}`);
-  }
-
-  return response.json();
-}
-
 export default async function handler(req, res) {
   const apiKey = process.env.RIOT_API_KEY;
   const region = String(req.query.region ?? 'na1').toLowerCase();
-  const gameName = req.query.gameName;
-  const tagLine = req.query.tagLine;
+  const gameName = String(req.query.gameName ?? '').trim();
+  const tagLine = String(req.query.tagLine ?? '').trim();
 
   if (!apiKey) {
     return res.status(500).json({
@@ -61,13 +46,8 @@ export default async function handler(req, res) {
       apiKey,
     );
 
-    const summoner = await riotFetch(
-      `https://${region}.api.riotgames.com/tft/summoner/v1/summoners/by-puuid/${account.puuid}`,
-      apiKey,
-    );
-
     const entries = await riotFetch(
-      `https://${region}.api.riotgames.com/tft/league/v1/entries/by-summoner/${summoner.id}`,
+      `https://${region}.api.riotgames.com/tft/league/v1/by-puuid/${account.puuid}`,
       apiKey,
     );
 
@@ -98,4 +78,20 @@ export default async function handler(req, res) {
       error: error.message,
     });
   }
+}
+
+async function riotFetch(url, apiKey) {
+  const response = await fetch(url, {
+    headers: {
+      'X-Riot-Token': apiKey,
+      Accept: 'application/json',
+    },
+  });
+
+  if (!response.ok) {
+    const body = await response.text();
+    throw new Error(`Riot API request failed with ${response.status}: ${body}`);
+  }
+
+  return response.json();
 }
