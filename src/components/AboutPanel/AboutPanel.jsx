@@ -41,8 +41,9 @@ function AboutPanel({ isOpen, onClose }) {
 
         <div className={styles.metaGrid}>
           <div className={styles.metaCard}>
-            <span className={styles.metaLabel}>School / Program</span>
-            <strong>TODO: Add school or degree</strong>
+            <span className={styles.metaLabel}>School</span>
+            <strong>Binghamton University</strong>
+            <strong>B.S. in Computer Science, Cybersecurity Track</strong>
           </div>
           <div className={styles.metaCard}>
             <span className={styles.metaLabel}>Current Focus</span>
@@ -51,15 +52,6 @@ function AboutPanel({ isOpen, onClose }) {
           <div className={styles.metaCard}>
             <span className={styles.metaLabel}>Role Target</span>
             <strong>Software Engineer / Frontend Engineer</strong>
-          </div>
-        </div>
-
-        <div className={styles.block}>
-          <h3>Contact</h3>
-          <div className={styles.links}>
-            <a href="#TODO-add-github">GitHub</a>
-            <a href="#TODO-add-linkedin">LinkedIn</a>
-            <a href="mailto:TODO@example.com">Email</a>
           </div>
         </div>
       </aside>

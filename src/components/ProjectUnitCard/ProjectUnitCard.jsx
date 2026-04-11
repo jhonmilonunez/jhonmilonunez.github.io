@@ -9,15 +9,10 @@ function ProjectUnitCard({ project, isSelected, onSelect }) {
       }`}
       onClick={onSelect}
     >
-      <div className={styles.artFrame} aria-hidden="true">
-        <div className={styles.artGlow} />
-        <span className={styles.costBadge}>{project.techStack.length}</span>
-      </div>
-
       <div className={styles.info}>
         <div className={styles.header}>
-          <span className={styles.rarity}>{project.rarity}</span>
-          <span className={styles.idTag}>{project.id}</span>
+          <span className={styles.rarity}>{project.rarityLabel}</span>
+          <span className={styles.idTag}>{project.cost}-Cost</span>
         </div>
         <strong>{project.name}</strong>
         <p>{project.summary}</p>
@@ -27,6 +22,8 @@ function ProjectUnitCard({ project, isSelected, onSelect }) {
           ))}
         </div>
       </div>
+
+      <span className={styles.costBadge}>{project.cost}</span>
     </button>
   );
 }

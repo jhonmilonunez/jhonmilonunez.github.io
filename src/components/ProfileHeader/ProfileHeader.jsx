@@ -11,7 +11,7 @@ function ProfileHeader({ name, role, levelLabel, onOpenAbout }) {
 
       <div className={styles.levelBadge}>
         <span className={styles.levelLabel}>{levelLabel}</span>
-        <span className={styles.levelValue}>LVL 04</span>
+        <span className={styles.levelValue}>LVL 21</span>
       </div>
     </button>
   );

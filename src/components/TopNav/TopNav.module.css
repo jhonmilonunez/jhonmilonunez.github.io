@@ -1,33 +1,10 @@
 .nav {
   height: 100%;
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
   align-items: center;
-  gap: 28px;
   padding: 14px 18px;
   background:
     linear-gradient(180deg, rgba(13, 25, 42, 0.96), rgba(8, 14, 24, 0.96));
-}
-
-.brand {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  min-width: 180px;
-}
-
-.brandOverline {
-  color: var(--text-muted);
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.brandName {
-  color: var(--text-primary);
-  font-size: 1.05rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .tabStrip {
@@ -67,7 +44,6 @@
 
 @media (max-width: 760px) {
   .nav {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    justify-content: flex-start;
   }
 }

@@ -19,11 +19,11 @@ function TFTProjectRoster({ projects }) {
       <section className={styles.header}>
         <div>
           <p className={styles.eyebrow}>Project Roster</p>
-          <h1>Selected work presented as a polished client-side shop row.</h1>
+          <h1>Five clean card templates, one for each TFT-inspired cost tier.</h1>
         </div>
         <p className={styles.intro}>
-          Each card uses rarity, density, and selection state to echo TFT shop
-          rhythm while still keeping the portfolio readable for recruiters.
+          The old card system has been stripped out. This version focuses on a
+          cleaner rarity ladder: common, uncommon, rare, epic, and legendary.
         </p>
       </section>
 
@@ -55,7 +55,7 @@ function TFTProjectRoster({ projects }) {
             <span
               className={`${styles.rarityBadge} ${styles[selectedProject.rarity]}`}
             >
-              {selectedProject.rarity}
+              {selectedProject.cost}-Cost {selectedProject.rarityLabel}
             </span>
           </div>
 

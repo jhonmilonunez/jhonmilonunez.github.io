@@ -1,13 +1,11 @@
 .card {
   position: relative;
-  display: grid;
-  grid-template-columns: 88px minmax(0, 1fr);
-  gap: 0;
-  min-height: 120px;
+  display: block;
+  min-height: 188px;
   padding: 0;
-  border: 1px solid rgba(162, 178, 201, 0.22);
+  border: 2px solid rgba(162, 178, 201, 0.24);
   background:
-    linear-gradient(180deg, rgba(17, 25, 37, 0.98), rgba(8, 13, 22, 0.98));
+    linear-gradient(180deg, rgba(18, 24, 34, 0.98), rgba(8, 12, 19, 0.98));
   color: var(--text-primary);
   text-align: left;
   transition:
@@ -22,76 +20,67 @@
 
 .selected {
   box-shadow:
-    inset 0 0 0 1px rgba(215, 184, 112, 0.28),
-    0 0 18px rgba(162, 205, 255, 0.12);
-}
-
-.artFrame {
-  position: relative;
-  min-height: 118px;
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
-  background:
-    radial-gradient(circle at 30% 20%, rgba(255, 221, 160, 0.22), transparent 30%),
-    linear-gradient(135deg, rgba(64, 83, 110, 0.9), rgba(13, 19, 31, 0.98));
-  overflow: hidden;
-}
-
-.artGlow {
-  position: absolute;
-  inset: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent 35%),
-    radial-gradient(circle at 70% 30%, rgba(133, 192, 255, 0.2), transparent 35%);
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 0 22px rgba(0, 0, 0, 0.26);
 }
 
 .costBadge {
   position: absolute;
-  right: 8px;
-  bottom: 8px;
-  min-width: 28px;
-  height: 28px;
+  top: 14px;
+  right: 14px;
+  min-width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(240, 198, 112, 0.45);
+  border: 2px solid currentColor;
   border-radius: 999px;
-  background: rgba(8, 14, 22, 0.92);
-  color: var(--accent-gold-bright);
-  font-size: 0.78rem;
+  background: rgba(8, 14, 22, 0.88);
+  font-size: 0.88rem;
   font-weight: 700;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 0 1px rgba(0, 0, 0, 0.18);
+  z-index: 1;
 }
 
 .info {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 10px 12px 12px;
+  gap: 10px;
+  padding: 14px 62px 14px 16px;
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: start;
+  min-height: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
 }
 
 .rarity,
 .idTag {
+  display: block;
   font-size: 0.68rem;
+  line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--text-muted);
+  align-self: start;
 }
 
 .card strong {
-  font-size: 1.02rem;
+  font-size: 1.08rem;
   letter-spacing: 0.04em;
 }
 
 .card p {
   margin: 0;
   color: var(--text-secondary);
-  font-size: 0.8rem;
+  font-size: 0.84rem;
   line-height: 1.35;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -101,46 +90,122 @@
 
 .stackPreview {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 6px;
   margin-top: auto;
+  min-width: 0;
+  overflow-x: hidden;
 }
 
 .stackPreview span {
-  padding: 4px 6px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  flex: 0 1 auto;
+  min-width: 0;
+  padding: 5px 7px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(6, 11, 18, 0.72);
   color: var(--text-secondary);
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 
 .common {
-  border-bottom: 4px solid rgba(167, 183, 204, 0.6);
+  border-color: rgba(195, 201, 210, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(207, 214, 222, 0.08);
+}
+
+.common::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(207, 214, 222, 0.88), rgba(151, 159, 170, 0.72));
+}
+
+.common .costBadge {
+  color: #cfd6de;
+}
+
+.uncommon {
+  border-color: rgba(84, 176, 103, 0.52);
+  box-shadow:
+    inset 0 0 0 1px rgba(124, 255, 178, 0.08),
+    0 0 18px rgba(45, 120, 62, 0.08);
+}
+
+.uncommon::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(124, 255, 178, 0.92), rgba(52, 133, 77, 0.72));
+}
+
+.uncommon .costBadge {
+  color: #7cffb2;
 }
 
 .rare {
-  border-bottom: 4px solid rgba(78, 161, 255, 0.82);
-  box-shadow: inset 0 0 24px rgba(78, 161, 255, 0.05);
+  border-color: rgba(95, 150, 236, 0.54);
+  box-shadow:
+    inset 0 0 0 1px rgba(166, 209, 255, 0.08),
+    0 0 20px rgba(52, 110, 198, 0.1);
+}
+
+.rare::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(166, 209, 255, 0.96), rgba(78, 161, 255, 0.78));
+}
+
+.rare .costBadge {
+  color: #a6d1ff;
 }
 
 .epic {
-  border-bottom: 4px solid rgba(178, 134, 255, 0.84);
-  box-shadow: inset 0 0 26px rgba(178, 134, 255, 0.05);
+  border-color: rgba(169, 108, 255, 0.56);
+  box-shadow:
+    inset 0 0 0 1px rgba(210, 168, 255, 0.08),
+    0 0 22px rgba(144, 82, 255, 0.12);
+}
+
+.epic::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(210, 168, 255, 0.98), rgba(155, 89, 182, 0.82));
+}
+
+.epic .costBadge {
+  color: #d2a8ff;
 }
 
 .legendary {
-  border-bottom: 4px solid rgba(240, 198, 112, 0.9);
-  box-shadow: inset 0 0 28px rgba(240, 198, 112, 0.06);
+  border-color: rgba(244, 185, 84, 0.6);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 215, 122, 0.08),
+    0 0 24px rgba(224, 152, 43, 0.14);
+}
+
+.legendary::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(255, 226, 150, 0.98), rgba(255, 170, 73, 0.84));
+}
+
+.legendary .costBadge {
+  color: #ffd27a;
 }
 
 @media (max-width: 760px) {
-  .card {
-    grid-template-columns: 72px minmax(0, 1fr);
-  }
-
-  .artFrame {
-    min-height: 108px;
+  .costBadge {
+    top: 12px;
+    right: 12px;
   }
 }

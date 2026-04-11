@@ -1,9 +1,10 @@
 import styles from './Dashboard.module.css';
+import TFTStatusCard from '../TFTStatusCard/TFTStatusCard';
 
 const quickLinks = [
   { label: 'GitHub', href: '#TODO-add-github' },
   { label: 'LinkedIn', href: '#TODO-add-linkedin' },
-  { label: 'Resume', href: '#TODO-add-resume-link' },
+  { label: 'Instagram', href: '#TODO-add-instagram' },
 ];
 
 const statusPanels = [
@@ -23,21 +24,13 @@ function Dashboard() {
       <section className={styles.heroPanel}>
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>Profile Dashboard</p>
-          <h1>Jhon Milonunez</h1>
+          <h1>Jhon Milo Nunez</h1>
           <h2>Software Engineer crafting polished product experiences.</h2>
           <p className={styles.summary}>
             TODO: Replace with a recruiter-friendly summary that quickly explains
             experience level, technical strengths, and the kind of teams or
             problems you want to work on.
           </p>
-
-          <div className={styles.quickLinks}>
-            {quickLinks.map((link) => (
-              <a key={link.label} href={link.href} className={styles.quickLink}>
-                {link.label}
-              </a>
-            ))}
-          </div>
         </div>
 
         <div className={styles.featureCard}>
@@ -52,6 +45,8 @@ function Dashboard() {
       </section>
 
       <section className={styles.lowerGrid}>
+        <TFTStatusCard />
+
         {statusPanels.map((panel) => (
           <article key={panel.title} className={styles.infoCard}>
             <span className={styles.cardLabel}>{panel.title}</span>

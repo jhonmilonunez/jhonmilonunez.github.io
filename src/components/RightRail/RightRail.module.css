@@ -28,21 +28,18 @@
   font-size: 0.68rem;
 }
 
-.quickActions {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.quickActions button,
 .contact {
   border: 1px solid var(--border-soft);
   background: rgba(11, 19, 31, 0.86);
   color: var(--text-secondary);
 }
 
-.quickActions button {
+.quickActions a {
+  display: grid;
+  place-items: center;
   padding: 10px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .list {
@@ -93,5 +90,5 @@
   color: var(--text-muted);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  color: rgb(13, 163, 13);
 }

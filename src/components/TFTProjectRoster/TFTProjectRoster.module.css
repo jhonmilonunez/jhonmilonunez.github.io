@@ -129,19 +129,23 @@
 }
 
 .common {
-  color: #a7b7cc;
+  color: #cfd6de;
+}
+
+.uncommon {
+  color: #7cffb2;
 }
 
 .rare {
-  color: #4ea1ff;
+  color: #a6d1ff;
 }
 
 .epic {
-  color: #b286ff;
+  color: #d2a8ff;
 }
 
 .legendary {
-  color: #f0c670;
+  color: #ffd27a;
 }
 
 .screenshot {
