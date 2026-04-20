@@ -38,7 +38,18 @@
 .name {
   font-size: 1rem;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  min-height: 1.2em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.caret {
+  width: 1px;
+  height: 1em;
+  background: currentColor;
+  box-shadow: 0 0 8px rgba(215, 184, 112, 0.35);
+  animation: blink 1s steps(1, end) infinite;
 }
 
 .levelBadge {
@@ -74,5 +85,17 @@
 
   .levelBadge {
     justify-self: start;
+  }
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
   }
 }

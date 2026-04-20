@@ -92,14 +92,23 @@
 }
 
 .featurePreview {
-  min-height: 220px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   display: grid;
   place-items: center;
+  overflow: hidden;
   border: 1px dashed rgba(162, 205, 255, 0.22);
   background:
     radial-gradient(circle at top, rgba(27, 61, 93, 0.52), transparent 60%),
     linear-gradient(180deg, rgba(8, 14, 22, 0.95), rgba(4, 7, 13, 0.95));
   color: var(--text-muted);
+}
+
+.featureGif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .lowerGrid {

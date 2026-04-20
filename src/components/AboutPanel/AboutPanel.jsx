@@ -30,7 +30,7 @@ function AboutPanel({ isOpen, onClose }) {
         </div>
 
         <div className={styles.block}>
-          <h3>Professional Bio</h3>
+          <h3>Bio</h3>
           <p>
             Early-career software engineer with a focus on building polished,
             maintainable products.

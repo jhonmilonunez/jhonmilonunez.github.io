@@ -25,7 +25,7 @@ function Dashboard() {
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>Who Am I?</p>
           <h1>Jhon Milo Nunez</h1>
-          <h2>Software Engineer crafting polished product experiences.</h2>
+          <h2>Aspiring Software Engineer</h2>
           <p className={styles.summary}>
             I'm a soon-to-be graduate from Binghamton University's School of Computing,
             graduating with a B.S. in Computer Science on the Cybersecurity Track. My passion
@@ -36,12 +36,17 @@ function Dashboard() {
 
         <div className={styles.featureCard}>
           <span className={styles.featureLabel}>Featured Project</span>
-          <strong>Signal Stack</strong>
+          <strong>Startup Signal</strong>
           <p>
-            A production-minded observability platform concept showing full-stack
-            depth, system thinking, and UI polish.
+            A Codex-assisted Python proof of concept for identifying promising startups using web scraping and natural language processing.
           </p>
-          <div className={styles.featurePreview}>TODO: Replace with featured screenshot</div>
+          <div className={styles.featurePreview}>
+            <img
+              className={styles.featureGif}
+              src="https://media1.tenor.com/m/b6JPIXTEaG0AAAAd/cats-aesthetic.gif"
+              alt="Placeholder cat GIF"
+            />
+          </div>
         </div>
       </section>
 
