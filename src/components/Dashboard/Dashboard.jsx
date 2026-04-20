@@ -10,11 +10,11 @@ const quickLinks = [
 const statusPanels = [
   {
     title: 'Current Focus',
-    body: 'Building polished front-end systems, leveling up product thinking, and shipping work that is easy for teams to maintain.',
+    body: 'Building polished full-stack projects that demonstrate a strong attention to user experience and security best practices. Actively seeking new grad opportunities in software engineering.',
   },
   {
-    title: 'What Recruiters Should Know',
-    body: 'TODO: Replace this block with a concise value statement about engineering strengths, collaboration style, and target opportunities.',
+    title: 'For Recruiters',
+    body: 'I thrive in environments that value teamwork, creativity, and a room for growth. I am eager to contribute my skills and passion for software engineering to a dynamic team.',
   },
 ];
 
@@ -23,13 +23,14 @@ function Dashboard() {
     <div className={styles.dashboard}>
       <section className={styles.heroPanel}>
         <div className={styles.heroCopy}>
-          <p className={styles.eyebrow}>Profile Dashboard</p>
+          <p className={styles.eyebrow}>Who Am I?</p>
           <h1>Jhon Milo Nunez</h1>
           <h2>Software Engineer crafting polished product experiences.</h2>
           <p className={styles.summary}>
-            TODO: Replace with a recruiter-friendly summary that quickly explains
-            experience level, technical strengths, and the kind of teams or
-            problems you want to work on.
+            I'm a soon-to-be graduate from Binghamton University's School of Computing,
+            graduating with a B.S. in Computer Science on the Cybersecurity Track. My passion
+            lies in building polished full-stack systems that not only prioritize user experince
+            but also retain a high level of security.
           </p>
         </div>
 
@@ -57,9 +58,9 @@ function Dashboard() {
         <article className={styles.activityCard}>
           <span className={styles.cardLabel}>Highlights</span>
           <ul>
-            <li>TODO: Add strongest internship, project, or academic milestone.</li>
-            <li>TODO: Add strongest technical achievement with measurable impact.</li>
-            <li>TODO: Add preferred engineering areas or domains of interest.</li>
+            <li><strong>Technical Interests:</strong> Full-stack development, cybersecurity</li>
+            <li><strong>Extracurriculars:</strong> President of the Philippine-American League (PAL) </li>
+            <li><strong>Hobbies:</strong> Going to the gym, cooking new recipes, playing Teamfight Tactics</li>
           </ul>
         </article>
       </section>

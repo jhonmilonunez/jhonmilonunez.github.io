@@ -33,21 +33,20 @@ function AboutPanel({ isOpen, onClose }) {
           <h3>Professional Bio</h3>
           <p>
             Early-career software engineer with a focus on building polished,
-            maintainable products. TODO: Replace this placeholder with a concise
-            recruiter-facing summary that highlights strengths, interests, and
-            work style.
+            maintainable products.
           </p>
         </div>
 
         <div className={styles.metaGrid}>
           <div className={styles.metaCard}>
-            <span className={styles.metaLabel}>School</span>
+            <span className={styles.metaLabel}>Education</span>
             <strong>Binghamton University</strong>
-            <strong>B.S. in Computer Science, Cybersecurity Track</strong>
+            <small><strong>B.S. in Computer Science, Cybersecurity Track</strong></small>
+            <strong>Regis High School</strong>
           </div>
           <div className={styles.metaCard}>
             <span className={styles.metaLabel}>Current Focus</span>
-            <strong>Frontend systems and full-stack product work</strong>
+            <strong>Full-stack product work and cybersecurity</strong>
           </div>
           <div className={styles.metaCard}>
             <span className={styles.metaLabel}>Role Target</span>
