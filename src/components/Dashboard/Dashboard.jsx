@@ -2,9 +2,9 @@ import styles from './Dashboard.module.css';
 import TFTStatusCard from '../TFTStatusCard/TFTStatusCard';
 
 const quickLinks = [
-  { label: 'GitHub', href: '#TODO-add-github' },
-  { label: 'LinkedIn', href: '#TODO-add-linkedin' },
-  { label: 'Instagram', href: '#TODO-add-instagram' },
+  { label: 'GitHub'},
+  { label: 'LinkedIn'},
+  { label: 'Instagram'},
 ];
 
 const statusPanels = [

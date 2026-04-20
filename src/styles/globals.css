@@ -3,6 +3,7 @@
 }
 
 html {
+  font-size: clamp(14px, 0.2vw + 13px, 16px);
   scroll-behavior: smooth;
 }
 
@@ -12,6 +13,7 @@ body {
   min-height: 100vh;
   background: var(--bg-root);
   color: var(--text-primary);
+  overflow-x: hidden;
 }
 
 body,

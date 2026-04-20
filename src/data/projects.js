@@ -1,5 +1,26 @@
 export const projects = [
   {
+    id: 'rare-template',
+    name: 'Dynamic Workout Tracker',
+    rarity: 'rare',
+    cost: 3,
+    rarityLabel: 'Rare',
+    summary: '',
+    techStack: ['React.js', 'TypeScript', 'PostgreSQL'],
+    githubUrl: '#TODO-add-github-link',
+    demoUrl: '#TODO-add-live-demo',
+    screenshotLabel: 'TODO: Replace with 3-cost project screenshot',
+    highlights: [
+      'Use for substantial portfolio pieces with clearer engineering depth.',
+      'Good fit for full-stack apps, analytics tools, or richer interactions.',
+      'Should read as above-average work without feeling overstated.',
+    ],
+  },
+];
+
+
+/*export const templates = [
+  {
     id: 'common-template',
     name: '1-Cost Template',
     rarity: 'common',
@@ -85,3 +106,4 @@ export const projects = [
     ],
   },
 ];
+*/

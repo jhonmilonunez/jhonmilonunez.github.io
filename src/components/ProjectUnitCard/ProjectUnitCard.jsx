@@ -10,12 +10,15 @@ function ProjectUnitCard({ project, isSelected, onSelect }) {
       onClick={onSelect}
     >
       <div className={styles.info}>
-        <div className={styles.header}>
-          <span className={styles.rarity}>{project.rarityLabel}</span>
-          <span className={styles.idTag}>{project.cost}-Cost</span>
+        <div className={styles.topContent}>
+          <div className={styles.header}>
+            <span className={styles.rarity}>{project.rarityLabel}</span>
+            <span className={styles.idTag}>{project.cost}-Cost</span>
+          </div>
+          <strong>{project.name}</strong>
+          <p>{project.summary}</p>
         </div>
-        <strong>{project.name}</strong>
-        <p>{project.summary}</p>
+
         <div className={styles.stackPreview}>
           {project.techStack.slice(0, 3).map((item) => (
             <span key={item}>{item}</span>

@@ -18,18 +18,12 @@ function TFTProjectRoster({ projects }) {
     <div className={styles.rosterPage}>
       <section className={styles.header}>
         <div>
-          <p className={styles.eyebrow}>Project Roster</p>
-          <h1>Five clean card templates, one for each TFT-inspired cost tier.</h1>
+          <h1>Projects</h1>
         </div>
-        <p className={styles.intro}>
-          The old card system has been stripped out. This version focuses on a
-          cleaner rarity ladder: common, uncommon, rare, epic, and legendary.
-        </p>
       </section>
 
       <section className={styles.shopPanel}>
         <div className={styles.shopHeader}>
-          <span className={styles.shopBadge}>Projects</span>
           <span className={styles.shopMeta}>{projects.length} available</span>
         </div>
 

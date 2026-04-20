@@ -92,3 +92,65 @@
   letter-spacing: 0.08em;
   color: rgb(13, 163, 13);
 }
+
+@media (max-width: 1120px) {
+  .rail {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .header {
+    margin-bottom: 2px;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .contact {
+    min-height: 64px;
+  }
+}
+
+@media (max-width: 760px) {
+  .rail {
+    padding: 12px;
+  }
+
+  .header h2 {
+    font-size: 0.88rem;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scroll-snap-type: x proximity;
+  }
+
+  .list::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .list::-webkit-scrollbar-thumb {
+    background: rgba(136, 160, 187, 0.28);
+  }
+
+  .contact {
+    min-width: 180px;
+    flex: 0 0 180px;
+    scroll-snap-align: start;
+  }
+
+  .copy strong {
+    font-size: 0.82rem;
+  }
+
+  .copy span {
+    font-size: 0.68rem;
+  }
+}

@@ -15,7 +15,13 @@ function RightRail() {
 
       <div className={styles.list}>
         {railLinks.map((item) => (
-          <a key={item.label} href={item.href} className={styles.contact}  target="_blank">
+          <a
+            key={item.label}
+            href={item.href}
+            className={styles.contact}
+            target="_blank"
+            rel="noreferrer"
+          >
             <span className={styles.avatar} />
             <span className={styles.copy}>
               <strong>{item.label}</strong>
