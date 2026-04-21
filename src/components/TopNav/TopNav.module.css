@@ -1,8 +1,10 @@
 .nav {
   height: 100%;
+  min-height: 100%;
+  flex: 1;
   display: flex;
   align-items: center;
-  padding: 14px 18px;
+  padding: 6px 12px;
   background:
     linear-gradient(180deg, rgba(13, 25, 42, 0.96), rgba(8, 14, 24, 0.96));
 }
@@ -16,7 +18,7 @@
 
 .tab {
   min-width: 116px;
-  padding: 14px 18px;
+  padding: 10px 16px;
   border: 1px solid var(--border-soft);
   background:
     linear-gradient(180deg, rgba(18, 31, 48, 0.9), rgba(8, 15, 27, 0.96));

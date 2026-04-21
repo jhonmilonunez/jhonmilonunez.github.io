@@ -6,23 +6,33 @@ function ProfileHeader({ name, role, levelLabel, onOpenAbout }) {
     () => [name, 'Toe#spicy', 'jangmangnunu'],
     [name]
   );
-  const [displayName, setDisplayName] = useState('');
+  const [displayName, setDisplayName] = useState(() => name.slice(0, 1));
   const [activeAliasIndex, setActiveAliasIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isAliasPause, setIsAliasPause] = useState(false);
 
   useEffect(() => {
     const currentAlias = aliases[activeAliasIndex];
-    let timeoutMs = isDeleting ? 35 : 60;
+    const timeoutMs = isAliasPause ? 180 : isDeleting ? 35 : 60;
 
     const timer = window.setTimeout(() => {
+      if (isAliasPause) {
+        setIsAliasPause(false);
+        return;
+      }
+
       if (!isDeleting && displayName === currentAlias) {
         setIsDeleting(true);
         return;
       }
 
-      if (isDeleting && displayName.length === 0) {
+      if (isDeleting && displayName.length <= 1) {
+        const nextAliasIndex = (activeAliasIndex + 1) % aliases.length;
+        const nextAlias = aliases[nextAliasIndex];
         setIsDeleting(false);
-        setActiveAliasIndex((currentIndex) => (currentIndex + 1) % aliases.length);
+        setActiveAliasIndex(nextAliasIndex);
+        setDisplayName(nextAlias.slice(0, 1));
+        setIsAliasPause(true);
         return;
       }
 
@@ -42,18 +52,8 @@ function ProfileHeader({ name, role, levelLabel, onOpenAbout }) {
       return () => window.clearTimeout(holdTimer);
     }
 
-    if (isDeleting && displayName.length === 0) {
-      window.clearTimeout(timer);
-      const nextAliasTimer = window.setTimeout(() => {
-        setIsDeleting(false);
-        setActiveAliasIndex((currentIndex) => (currentIndex + 1) % aliases.length);
-      }, 160);
-
-      return () => window.clearTimeout(nextAliasTimer);
-    }
-
     return () => window.clearTimeout(timer);
-  }, [activeAliasIndex, aliases, displayName, isDeleting]);
+  }, [activeAliasIndex, aliases, displayName, isAliasPause, isDeleting]);
 
   return (
     <button type="button" className={styles.profileButton} onClick={onOpenAbout}>

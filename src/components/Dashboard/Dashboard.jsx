@@ -29,7 +29,7 @@ function Dashboard() {
           <p className={styles.summary}>
             I'm a soon-to-be graduate from Binghamton University's School of Computing,
             graduating with a B.S. in Computer Science on the Cybersecurity Track. My passion
-            lies in building polished full-stack systems that not only prioritize user experince
+            lies in building polished full-stack systems that not only prioritize user experience
             but also retain a high level of security.
           </p>
         </div>

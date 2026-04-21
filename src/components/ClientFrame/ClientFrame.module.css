@@ -33,7 +33,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 18px;
-  align-items: center;
+  align-items: stretch;
 }
 
 .navSlot,
@@ -48,7 +48,18 @@
 
 .navSlot,
 .profileSlot {
-  min-height: 78px;
+  min-height: 56px;
+  align-self: stretch;
+}
+
+.profileSlot {
+  justify-self: end;
+  inline-size: clamp(280px, 24vw, 360px);
+  display: flex;
+}
+
+.navSlot {
+  display: flex;
 }
 
 .bodyFrame {
@@ -91,6 +102,11 @@
 @media (max-width: 760px) {
   .topBar {
     grid-template-columns: 1fr;
+  }
+
+  .profileSlot {
+    justify-self: stretch;
+    inline-size: 100%;
   }
 
   .mainPanel {
