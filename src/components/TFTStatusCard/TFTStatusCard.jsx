@@ -2,19 +2,34 @@ import { useEffect, useState } from 'react';
 import { fetchTftRank, getTftProfile } from '../../lib/fetchTftRank';
 import styles from './TFTStatusCard.module.css';
 
-// Riot tier palettes, adapted to the Soft Serve cream/currant tones.
-const palettes = {
-  UNRANKED: { grad: 'linear-gradient(140deg,#C4B5A0,#8C8473)', shadow: 'rgba(140,132,115,.5)', accent: '#FBF2E2' },
-  IRON: { grad: 'linear-gradient(140deg,#6F6657,#3D362A)', shadow: 'rgba(61,54,42,.6)', accent: '#C4B5A0' },
-  BRONZE: { grad: 'linear-gradient(140deg,#C97A5C,#7A3B22)', shadow: 'rgba(122,59,34,.55)', accent: '#F0D9D3' },
-  SILVER: { grad: 'linear-gradient(140deg,#C8CFD8,#7E8894)', shadow: 'rgba(126,136,148,.55)', accent: '#FBF2E2' },
-  GOLD: { grad: 'linear-gradient(140deg,#E6B65A,#A07424)', shadow: 'rgba(160,116,36,.55)', accent: '#FBF2E2' },
-  PLATINUM: { grad: 'linear-gradient(140deg,#7DC7B8,#2F7A6B)', shadow: 'rgba(47,122,107,.55)', accent: '#FBF2E2' },
-  EMERALD: { grad: 'linear-gradient(140deg,#7DBE7A,#2E6A38)', shadow: 'rgba(46,106,56,.55)', accent: '#FBF2E2' },
-  DIAMOND: { grad: 'linear-gradient(140deg,#9CB6E3,#3E5BA3)', shadow: 'rgba(62,91,163,.55)', accent: '#FBF2E2' },
-  MASTER: { grad: 'linear-gradient(140deg,#B58CD6,#6B3CA1)', shadow: 'rgba(107,60,161,.6)', accent: '#FBF2E2' },
-  GRANDMASTER: { grad: 'linear-gradient(140deg,#D86B6B,#8A1F1F)', shadow: 'rgba(138,31,31,.6)', accent: '#FBF2E2' },
-  CHALLENGER: { grad: 'linear-gradient(140deg,#E8C97A,#9DD6E3,#A8281F)', shadow: 'rgba(168,40,31,.6)', accent: '#FBF2E2' },
+// Live rank emblems (served from public/emblems).
+const emblems = {
+  UNRANKED: '/emblems/emblem-iron.png',
+  IRON: '/emblems/emblem-iron.png',
+  BRONZE: '/emblems/emblem-bronze.png',
+  SILVER: '/emblems/emblem-silver.png',
+  GOLD: '/emblems/emblem-gold.png',
+  PLATINUM: '/emblems/emblem-platinum.png',
+  EMERALD: '/emblems/emblem-emerald.png',
+  DIAMOND: '/emblems/emblem-diamond.png',
+  MASTER: '/emblems/emblem-master.png',
+  GRANDMASTER: '/emblems/emblem-grandmaster.png',
+  CHALLENGER: '/emblems/emblem-challenger.png',
+};
+
+// Soft tier-tinted glow behind each emblem.
+const glows = {
+  UNRANKED: 'rgba(140,132,115,.4)',
+  IRON: 'rgba(61,54,42,.45)',
+  BRONZE: 'rgba(122,59,34,.45)',
+  SILVER: 'rgba(126,136,148,.5)',
+  GOLD: 'rgba(160,116,36,.5)',
+  PLATINUM: 'rgba(47,122,107,.5)',
+  EMERALD: 'rgba(46,106,56,.5)',
+  DIAMOND: 'rgba(62,91,163,.5)',
+  MASTER: 'rgba(107,60,161,.5)',
+  GRANDMASTER: 'rgba(138,31,31,.5)',
+  CHALLENGER: 'rgba(168,40,31,.5)',
 };
 
 const fallbackRank = {
@@ -67,7 +82,8 @@ function TFTStatusCard() {
   const lossPct = total ? `${(rankData.losses / total) * 100}%` : '0%';
 
   const tierKey = rankData.tier.toUpperCase();
-  const palette = palettes[tierKey] ?? palettes.UNRANKED;
+  const emblem = emblems[tierKey] ?? emblems.UNRANKED;
+  const glow = glows[tierKey] ?? glows.UNRANKED;
   const isUnranked = tierKey === 'UNRANKED';
 
   const caption =
@@ -93,24 +109,13 @@ function TFTStatusCard() {
       </div>
 
       <div className={styles.mainRow}>
-        <div
-          className={styles.emblem}
-          style={{
-            background: `radial-gradient(circle at 35% 30%, rgba(255,255,255,.6), rgba(255,255,255,0) 60%), ${palette.grad}`,
-            boxShadow: `inset 0 1px 2px rgba(255,255,255,.6), 0 14px 28px -18px ${palette.shadow}`,
-          }}
-        >
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <path
-              d="M32 4 L58 20 L52 50 L32 60 L12 50 L6 20 Z"
-              fill="rgba(255,255,255,.18)"
-              stroke="rgba(255,255,255,.55)"
-              strokeWidth="1.5"
-            />
-            <path d="M32 14 L48 24 L44 44 L32 50 L20 44 L16 24 Z" fill="rgba(255,255,255,.32)" />
-            <path d="M32 22 L40 28 L37 40 L32 43 L27 40 L24 28 Z" fill="#FBF2E2" />
-            <circle cx="32" cy="32" r="3.5" fill={palette.accent} />
-          </svg>
+        <div className={styles.emblem}>
+          <img
+            className={styles.emblemImg}
+            src={emblem}
+            alt={`${titleCase(rankData.tier)} rank emblem`}
+            style={{ filter: `drop-shadow(0 8px 16px ${glow})` }}
+          />
         </div>
 
         <div className={styles.rankInfo}>
