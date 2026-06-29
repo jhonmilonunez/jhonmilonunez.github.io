@@ -3,40 +3,29 @@
 }
 
 html {
-  font-size: clamp(14px, 0.2vw + 13px, 16px);
   scroll-behavior: smooth;
+}
+
+html,
+body {
+  /* clip (not hidden) prevents the blobs' horizontal overflow without turning
+     html/body into a scroll container, which would break the sticky header. */
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
-  min-width: 320px;
   min-height: 100vh;
-  background: var(--bg-root);
-  color: var(--text-primary);
-  overflow-x: hidden;
+  background: var(--cream-bg);
+  color: var(--ink-body);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-body,
-button,
-a,
-input,
-textarea,
-select {
-  font: inherit;
-}
-
-button,
-a {
-  transition:
-    color 180ms ease,
-    border-color 180ms ease,
-    background-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 180ms ease;
-}
-
-button {
-  cursor: pointer;
+#root {
+  min-height: 100vh;
 }
 
 a {
@@ -49,22 +38,75 @@ img {
   display: block;
 }
 
-#root {
-  min-height: 100vh;
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--accent-wash);
+  color: var(--accent-deep);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent-gold-bright);
-  outline-offset: 2px;
+  outline: 3px solid rgba(168, 40, 31, 0.5);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+/* --- Scroll reveal (toggled by IntersectionObserver in App) --- */
+[data-reveal] {
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+[data-reveal='hidden'] {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+/* --- Ambient drifting blobs --- */
+@keyframes drift1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(46px, 32px) scale(1.08);
+  }
+}
+
+@keyframes drift2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-40px, -30px) scale(1.07);
+  }
+}
+
+@keyframes drift3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(28px, -34px) scale(1.05);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation: none !important;
+  }
+
+  [data-reveal],
+  [data-reveal='hidden'] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

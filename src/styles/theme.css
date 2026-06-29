@@ -1,19 +1,48 @@
 :root {
-  color-scheme: dark;
-  font-family: 'Segoe UI', 'Trebuchet MS', Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  background-color: #05080f;
-  color: #f4efe6;
+  color-scheme: light;
 
-  --bg-root: #05080f;
-  --panel-bg: linear-gradient(180deg, rgba(12, 21, 35, 0.96), rgba(7, 11, 18, 0.98));
-  --border-strong: rgba(176, 197, 220, 0.18);
-  --border-soft: rgba(136, 160, 187, 0.16);
-  --text-primary: #f4efe6;
-  --text-secondary: #b9c5d6;
-  --text-muted: #7c8da5;
-  --accent-gold: rgba(215, 184, 112, 0.82);
-  --accent-gold-bright: #f0c670;
-  --shadow-panel: 0 18px 34px rgba(0, 0, 0, 0.28);
+  /* --- Cream surfaces --- */
+  --cream-bg: #F5EAD7;
+  --cream-card: #FBF2E2;
+  --cream-raised: #FFF8E8;
+  --cream-soft: #F0D9D3;
+
+  /* --- Ink / text --- */
+  --ink: #2A251C;
+  --ink-2: #2A1A12;
+  --ink-body: #5C5446;
+  --muted: #8C8473;
+  --muted-warm: #8C7166;
+  --muted-3: #6F6657;
+
+  /* --- Hairlines --- */
+  --hairline: rgba(122, 29, 23, 0.08);
+  --hairline-12: rgba(122, 29, 23, 0.12);
+
+  /* --- On dark (currant) --- */
+  --on-dark: #FBF2E2;
+  --on-dark-soft: #F0D9D3;
+  --on-dark-sage: #B5C5A4;
+
+  /* --- Currant theme accents --- */
+  --accent: #A8281F;
+  --accent-deep: #7A1D17;
+  --accent-wash: #FBE3DD;
+  --accent2: #95A684;
+  --accent2-deep: #5E7148;
+  --accent2-wash: #DDE5D2;
+
+  /* --- Layout --- */
+  --maxw: 1080px;
+  --pad: clamp(22px, 5vw, 44px);
+
+  /* --- Type --- */
+  --font-display: 'Lora', Georgia, serif;
+  --font-body: 'Figtree', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+
+  font-family: var(--font-body);
+  color: var(--ink-body);
+  background-color: var(--cream-bg);
+  line-height: 1.6;
 }

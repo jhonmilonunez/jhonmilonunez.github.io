@@ -1,0 +1,46 @@
+.root {
+  position: relative;
+  min-height: 100vh;
+}
+
+.layer {
+  position: relative;
+  z-index: 1;
+}
+
+.blob {
+  position: fixed;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blob1 {
+  top: -170px;
+  left: -130px;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle at 50% 50%, rgba(201, 122, 92, 0.55), rgba(201, 122, 92, 0) 68%);
+  filter: blur(42px);
+  animation: drift1 24s ease-in-out infinite alternate;
+}
+
+.blob2 {
+  bottom: -190px;
+  right: -120px;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle at 50% 50%, rgba(149, 166, 132, 0.5), rgba(149, 166, 132, 0) 68%);
+  filter: blur(46px);
+  animation: drift2 29s ease-in-out infinite alternate;
+}
+
+.blob3 {
+  top: 42%;
+  right: 6%;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle at 50% 50%, rgba(201, 122, 92, 0.3), rgba(201, 122, 92, 0) 70%);
+  filter: blur(40px);
+  animation: drift3 22s ease-in-out infinite alternate;
+}

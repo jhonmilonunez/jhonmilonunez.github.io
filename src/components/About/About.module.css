@@ -1,0 +1,193 @@
+.about {
+  scroll-margin-top: 72px;
+  padding: clamp(56px, 8vw, 96px) 0;
+}
+
+.inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 48px);
+  align-items: start;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.portrait {
+  position: relative;
+  width: 100%;
+  height: clamp(380px, 38vw, 460px);
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #fbe3dd, #dde5d2);
+  box-shadow:
+    0 1px 2px rgba(61, 54, 42, 0.05),
+    0 22px 48px -28px rgba(122, 29, 23, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.portraitImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
+  transform: scale(130%) translateY(-30px);
+}
+
+.main {
+  min-width: 0;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 16px;
+  font: 600 0.9rem/1 var(--font-body);
+  color: var(--accent2-deep);
+}
+
+.eyebrowDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent2);
+  box-shadow: 0 0 0 4px var(--accent2-wash);
+}
+
+.heading {
+  font: 500 clamp(1.9rem, 3.4vw, 2.5rem)/1.12 var(--font-display);
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin: 0 0 18px;
+  max-width: 20ch;
+}
+
+.lead {
+  font: 400 1.05rem/1.75 var(--font-body);
+  color: var(--ink-body);
+  margin: 0 0 28px;
+  max-width: 54ch;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--cream-card);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow:
+    0 1px 2px rgba(61, 54, 42, 0.05),
+    0 22px 48px -32px rgba(122, 29, 23, 0.32);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 1px 2px rgba(61, 54, 42, 0.05),
+    0 30px 58px -30px rgba(122, 29, 23, 0.42);
+}
+
+.iconBox {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconAccent {
+  background: var(--accent-wash);
+}
+
+.iconAccent2 {
+  background: var(--accent2-wash);
+}
+
+.cardTitle {
+  font: 600 1rem/1.3 var(--font-display);
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+
+.cardBody {
+  font: 400 0.9rem/1.55 var(--font-body);
+  color: var(--ink-body);
+}
+
+/* --- Icons --- */
+.iconDiamond {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--accent-deep);
+  transform: rotate(45deg);
+}
+
+.iconLines {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.iconLines span {
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--accent2-deep);
+}
+
+.iconLines span:nth-child(1),
+.iconLines span:nth-child(3) {
+  width: 15px;
+}
+
+.iconLines span:nth-child(2) {
+  width: 11px;
+}
+
+.iconDots {
+  display: flex;
+  gap: 4px;
+}
+
+.iconDots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-deep);
+}
+
+.iconRing {
+  width: 14px;
+  height: 14px;
+  border: 2.5px solid var(--accent2-deep);
+  border-radius: 50%;
+}
+
+@media (max-width: 760px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+}
